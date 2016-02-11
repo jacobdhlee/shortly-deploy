@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['client/**/*.js'],
-        dest: 'public/dist',
+        dest: 'public/dist/main.js',
     },
   },
 
