@@ -30,7 +30,7 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'public/dist': ['client/**/*.js']
+          'public/dist':['client/**/*.js']
         }
       }
     },
