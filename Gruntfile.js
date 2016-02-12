@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+//require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -34,7 +35,7 @@ module.exports = function(grunt) {
     },
 
     eslint: {
-      target: [ 'client.js'
+      target: [ 'public/dist/main.js'
         // Add list of files to lint here
       ]
     },
@@ -75,7 +76,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.registerTask('default', ['eslint']);
 
 
   grunt.registerTask('server-dev', function (target) {
@@ -98,6 +98,8 @@ module.exports = function(grunt) {
     }
     grunt.task.run([ 'server-dev' ]);
   });
+
+  // grunt.registerTask('default', ['eslint']);
 
   ////////////////////////////////////////////////////
   // Main grunt tasks
