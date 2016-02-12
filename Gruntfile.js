@@ -4,7 +4,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['client/**/*.js'],
+        src: ['public/client/app.js','public/client/createLinkView.js','public/client/link.js',
+              'public/client/links.js','public/client/linksView.js','public/client/linkView.js','public/client/router.js'],
         dest: 'public/dist/main.js',
     },
   },
@@ -27,13 +28,13 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'public/dist':['client/**/*.js']
+          'public/dist/mainUg.js':['public/dist/main.js']
         }
       }
     },
 
     eslint: {
-      target: [
+      target: [ 'client.js'
         // Add list of files to lint here
       ]
     },
@@ -74,6 +75,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.registerTask('default', ['eslint']);
 
 
   grunt.registerTask('server-dev', function (target) {
